@@ -1,5 +1,5 @@
 # How to approach this Readme?
- - I ask that if you want to work on any of these ideas that you reach out to me @ alexander.l.nanda.27@darmouth.edu . I'd be down to talk about them and am curious about innovative approaches to solving problems that you may have. 
+ - I ask that if you want to work on any of these ideas that you reach out to me @ alexander.l.nanda.27@dartmouth.edu . I'd be down to talk about them and am curious about innovative approaches to solving problems that you may have. 
  - Ideas in this .md file are listed one after another. You may have to do a bit of scrolling to get to an idea that you find interesting. Here is a list of all current ideas:
 
 ## gdbpilot, an extension for gdb that uses a LLM to help you debug 
