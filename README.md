@@ -1,16 +1,27 @@
 # How to approach this Readme?
- - I ask that if you want to work on any of these ideas that you reach out to me @ alexander.l.nanda.27@dartmouth.edu . I'd be down to talk about them and am curious about innovative approaches to solving problems that you may have. 
+ - I ask that if you want to work on any of these ideas that you reach out to me @ alexander.l.nanda.27@darmouth.edu . I'd be down to talk about them and am curious about innovative approaches to solving problems that you may have. 
  - Ideas in this .md file are listed one after another. You may have to do a bit of scrolling to get to an idea that you find interesting. Here is a list of all current ideas:
 
-## gdbpilot, an extension for gdb that uses a LLM to help you debug 
+## local-language-educator: a local langauge model that can run on minimal hardware and talks to people in their native langauge (specifically developing nations)
+## stability-mix: solve spurious correlation in datasets using stable diffusion
+## gdbpilot - Why is there no copilot for GDB?
 ## DartBored, a digital whiteboard social media app for college students. 
 ## World of Tanks strategy automator tool.
 ## AI Agent Swarm Society/Strategy Game simulator
 
 
-# gdbpilot 
-## an extension for gdb that uses a LLM to help you debug
-[in progress]
+# gdbcopilot 
+## A gdb copilot debugger that has access to your workspace, file structure, and output/execution state
+
+How it works:
+ - You must first be within gdb, and once you are, the pilot command is your go to in order to interact with the LLM.
+
+	'''c
+		gdb 
+		gdb > pilot "prompt-goes-here"
+	'''
+ - The pilot command takes your prompt and feeds it into (probably just to start) GPT-4 and the LLM has access to GDB's current output, all contents contained within your current directory, and you give a prompt, and you get a response right in GDB.
+
 
 # DartBored
 
@@ -18,6 +29,11 @@
 TLDR: The need: A lot of groups (clubs, Greek life, etc.) use different means of communication (GroupMe, Email, Slack, Text) that, for a student, is often cumbersome and annoying to manage, specially for mixing social contexts with school contexts.
 
 
+- The idea began over a discussion of how there isn't a good way to facilitate a "one-way discussion". By "one-way discussion", we mean that it isn't a message feed where there are two parties communicating with each other, but rather some sort of message where a user relays information to a group (i.e. think about how most clubs at colleges go about communication--they set up a GroupMe or Slack and one or two people who are high-up in the club send meeting/event times, and everyone in the group likes the message. The conversation is one-way because a large percent of the users simply like messages and do not send messages themselves).
+- We realized that a lot of people have whiteboards on their door and use these to have a one-way conversation with any passerby about any myriad of things from Minecraft Servers to graffiti to dorm parties. The whiteboard that a lot of people may have on the outside of their dorm room is unique in that a passerby may or may not be able to edit the whiteboard if they have a marker or eraser and that the whiteboard is designed for an explicitly social purpose.
+
+## From this initial discussion I thought about the idea more and developed it into one that could be a new app that I dubbed "DartBored" (a play on Dartmouth, Whiteboard, and Bored) which would allow for groups to create digital whiteboards. There are two fundamental aspects of DartBored:
+- First, the creation of boards themselves.  A board would need at least two people and could be public or private, so that anyone from two people in a dorm to an entire fraternity could create a board and convey information. At Dartmouth it is tradition for most events (club meetings, parties, etc.)  to create posters that are emailed to the entire school, so this would also address the problem of email inbox cluttering that is frequently discussed on Dartmouth's Fizz. You could also have a private board that would require some code in order for a user to join, but once joined, the user could see all activity on the digital whiteboard. The digital whiteboard itself would allow for image sharing, drawing, text editing, etc. This would also be a centralized place that you could know who is a part of each public club/group. For private boards, the board admin could configure whether or not to display members, and if a dorm room wanted to restrict some information about a get-together with just a few friends, for example, they could do so.
 - The idea began over a discussion of how there isn't a good way to facilitate a "one-way discussion". By "one-way discussion", we mean that it isn't a message feed where there are two parties communicating with each other, but rather some sort of message where a user relays information to a group (i.e. think about how most clubs at colleges go about communication--they set up a GroupMe or Slack and one or two people who are high-up in the club send meeting/event times, and everyone in the group likes the message. The conversation is one-way because a large percent of the users simply like messages and do not send messages themselves).
 - We realized that a lot of people have whiteboards on their door and use these to have a one-way conversation with any passerby about any myriad of things from Minecraft Servers to graffiti to dorm parties. The whiteboard that a lot of people may have on the outside of their dorm room is unique in that a passerby may or may not be able to edit the whiteboard if they have a marker or eraser and that the whiteboard is designed for an explicitly social purpose.
 
@@ -60,11 +76,6 @@ This is a project I am currently planning different approaches in which to imagi
 
 ## More on the Convolutional Neural Network
 
- - I imagine an approach which simply uses image data will function, albiet pretty poorly. I'll likely start with something as simple as this, but without much data about vehicle movement I do not believe it will work well.
- - vehicle destruction will be harder than expected to make function properly. i do not want a result where vehicles which have 0 health points impact (really at all) the output of the model.
- - designing a custom neural network will be challenging. I need to figure out an angle in which to approach higher dimensionality cnns as I only have experience in working with 3d cnns for image classification. 
- - absensce of an image entirely. in the ideal solution, an image might not be needed to be passed in at all. if vehicle position data can be entered based upon the coordinate vehicle information that is extracted from replay clips.
- - different maps
  - using a pre-trained network? This may be more confusing as I try to create something which is able to accomplish the goal of the project. imagining my own approach to convolution and pooling would be entirely new to me, but if I had unlimited time I would undoubtedly do this. In this case, I think zero padding could be terrible for the quality of the model as sometimes the most important features of the map are on its edges. The only benefit the nature of this project has is that I already know the different maps and these do not change, so a lot of image data is hard-coded. right now, i'll create something working with efficientnetb7 if this is how I choose to approach it since i've used it before, possibly switching to NoisyNN as the noise appraoch probably is the future of CNNs and adversarial learning.  
  - map changes. maps have changed over time in wot. for the sake of simplicity right now, I think i'll want to choose replays over the past year to mitigate these map changes as much as possible and keep the most up-to-date playstyle. 
 
