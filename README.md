@@ -1,6 +1,6 @@
 # How to approach this Readme?
  - I ask that if you want to work on any of these ideas that you reach out to me @ alexander.l.nanda.27@darmouth.edu . I'd be down to talk about them and am curious about innovative approaches to solving problems that you may have. 
- - Ideas in this .md file are listed one after another. You may have to do a bit of scrolling to get to an idea that you find interesting. Here is a list of all current ideas:
+ - Ideas in this .md file are listed one after another. Here is a list of all current ideas:
 
 ## local-language-educator: a local langauge model that can run on minimal hardware and talks to people in their native langauge (specifically developing nations)
 ## stability-mix: solve spurious correlation in datasets using stable diffusion
@@ -8,6 +8,7 @@
 ## DartBored, a digital whiteboard social media app for college students. 
 ## World of Tanks strategy automator tool.
 ## AI Agent Swarm Society/Strategy Game simulator
+## Opportunity Cost Payment System
 
 
 # gdbcopilot 
@@ -83,7 +84,10 @@ This is a project I am currently planning different approaches in which to imagi
  - i imagine data extraction will be much more challenging than initially thought. getting an amount of data that is sufficient for training of the cnn will be challenging.  
  - which replays to choose? this is not an easy question at all to answer and is probably the most important one of the entire project, and also the one with the least verifiable evidence per time. basically, i'll just have to choose what i think is best (highest damange matches, MOE matches, etc.). one immediate problem i see is that the most useful strategy is often not the best for MOE. so, I'll need to be careful because your model is only as good and as bad as your data. for now, this problem can probably be deferred until i've got an acceptable version of the model wokring, but later this will become the question. 
 
+# opportunity cost payment system
 
+## Overview
+Similar to venmo, with payment routing between friends without the need of a bank account, however, this is aimed to stop the need for budgeting. By uploading a bank transaction statement or connecting your venmo, it basically plays off of Venmo's "What is this for?" field as, before you send a friend money (maybe for pizza, a party, or anything else) it uses your previous transaction data to tell you where your opportunity cost lies and whether or not you should really pay someone as much as you say. The main problem this is aimed to solve is that many payments sent through venmo are inherently subjective and often a conversation goes something like: q:"how much do I owe you?" a: "dude it doesn't really matter, whatever you think is **fair**". A friend presented me with this problem and a version of this solution, and it is truly aimed to be a more informed venmo specifically targeted towards college students. The key to this would be how do you gain users on this when venmo and others already have such a strong hold on the friend/social payment area, and I think the way to approach building something like this would be to make it have a sort of social aspect as well that auto-manages your budget and keeping it very very simple and clean. 
 
 
 
