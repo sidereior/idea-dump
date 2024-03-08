@@ -1,23 +1,42 @@
 # How to approach this Readme?
  - I ask that if you want to work on any of these ideas that you reach out to me @ alexander.l.nanda.27@darmouth.edu . I'd be down to talk about them and am curious about innovative approaches to solving problems that you may have. 
- - Ideas in this .md file are listed one after another. Here is a list of all current ideas:
+ - Ideas in this .md file are listed one after another. You may have to do a bit of scrolling to get to an idea that you find interesting. Here is a list of all current ideas:
 
-## local-language-educator: a local langauge model that can run on minimal hardware and talks to people in their native langauge (specifically developing nations)
-## stability-mix: solve spurious correlation in datasets using stable diffusion
-## gdbpilot - Why is there no copilot for GDB?
+## text forwarder
+## gccopilot, LLM-powered GCC Debugger. Why is there no copilot for GCC?
 ## DartBored, a digital whiteboard social media app for college students. 
 ## World of Tanks strategy automator tool.
 ## AI Agent Swarm Society/Strategy Game simulator
-## Opportunity Cost Payment System
+
+# text forwader
+how it works:
+ - stupid simple widget that allows you to forward selected messages to other people
+ - why? I have found that I reach out to groups of people individually sometimes for things like technical questions, etc. and dont wanna copy paste all of my messages individually to them
 
 
-# gdbcopilot 
-## A gdb copilot debugger that has access to your workspace, file structure, and output/execution state
+
+# gccopilot 
+## A gcc copilot debugger that has access to your workspace, file structure, and output/execution state
 
 How it works:
- - You must first be within gdb, and once you are, the pilot command is your go to in order to interact with the LLM.
+	'''usage
 
-	'''c
+		gcc 
+
+	'''
+
+
+# DartBored
+
+## Simply, it's a digital whiteboard that acts similar to a permanent Instagram Story.
+TLDR: The need: A lot of groups (clubs, Greek life, etc.) use different means of communication (GroupMe, Email, Slack, Text) that, for a student, is often cumbersome and annoying to manage, specially for mixing social contexts with school contexts.
+
+
+- The idea began over a discussion of how there isn't a good way to facilitate a "one-way discussion". By "one-way discussion", we mean that it isn't a message feed where there are two parties communicating with each other, but rather some sort of message where a user relays information to a group (i.e. think about how most clubs at colleges go about communication--they set up a GroupMe or Slack and one or two people who are high-up in the club send meeting/event times, and everyone in the group likes the message. The conversation is one-way because a large percent of the users simply like messages and do not send messages themselves).
+- We realized that a lot of people have whiteboards on their door and use these to have a one-way conversation with any passerby about any myriad of things from Minecraft Servers to graffiti to dorm parties. The whiteboard that a lot of people may have on the outside of their dorm room is unique in that a passerby may or may not be able to edit the whiteboard if they have a marker or eraser and that the whiteboard is designed for an explicitly social purpose.
+
+## From this initial discussion I thought about the idea more and developed it into one that could be a new app that I dubbed "DartBored" (a play on Dartmouth, Whiteboard, and Bored) which would allow for groups to create digital whiteboards. There are two fundamental aspects of DartBored:
+- First, the creation of boards themselves.  A board would need at least two people and could be public or private, so that anyone from two people in a dorm to an entire fraternity could create a board and convey information. At Dartmouth it is tradition for most events (club meetings, parties, etc.)  to create posters that are emailed to the entire school, so this would also address the problem of email inbox cluttering that is frequently discussed on Dartmouth's Fizz. You could also have a private board that would require some code in order for a user to join, but once joined, the user could see all activity on the digital whiteboard. The digital whiteboard itself would allow for image sharing, drawing, text editing, etc. This would also be a centralized place that you could know who is a part of each public club/group. For private boards, the board admin could configure whether or not to display members, and if a dorm room wanted to restrict some information about a get-together with just a few friends, for example, they could do so.
 		gdb 
 		gdb > pilot "prompt-goes-here"
 	'''
@@ -60,23 +79,6 @@ LLM: Okay! Here you go: ...
 
 ##The best thing about this approach is that it could easily be applied to a miriad of other applications of social science (what if you had an entirely AI social media where it is just AI talking with AI?) and that LLMs are trained on historical data. As long as the LLM know about some sort of structure of a group, it could emulate it with just a handful of words.  
 
-- How this works. [This paper](https://arxiv.org/abs/2305.11541) is the bread and butter of this entire idea. The entire reason why agent swarms are useful is because giving a smaller domain of a problem is better than a larger one (obviously), but the extent to which it improves Q&A is pretty cool. On the level of the structure of the LLM to create the simulation, I would envision it to be similar to [HAAS](https://github.com/daveshap/OpenAI_Agent_Swarm) where there is a sort of "agency board" that has the power to spawn and destroy instances, and then subsequently desigenated and oversees the creation of a system that is able to complexly model and interact with eachother.
-
-## as a final note, the government will pay you $1M (over 2 years) to make an automated wargaming tool. [See here] (https://www.dodsbirsttr.mil/topics-app/?baa=DOD_SBIR_2024_P1_C1)
-
-
-
-#wot strategy explorer
-
-This is a project I am currently planning different approaches in which to imagine a solution. The aim of the project is this: develop a tool that is able to determine an optimal strategy in which for your tank to move in the video game world of tanks given the current map. It will not consider vehicle orientation, only position at this moment. 
-
-## Aspects
- - data exporter: in order to get the data that will be used in which to train a CNN, we will need a lot of data from games themselves. I am not very familiar with wot replay files and exporting data from them, or using some api which is able to read data. this is the first aspect in order to explore how to get reliable map data from games (ideally without the need of being in the game itself) and getting them from wotreplays or something else.
-
- - convolutional neural network: the approach to this should be similar to the approach outlined in cs89.31. what I am currently imagining is a way in which to add on another layer of image data that represents both vehicle information and position. initially this will look quite simple. in addition to having the traditionally 3d cnn which contains image x, image y, and rgb values, we also want to include some data such as vehicle location, vehicle hit points, vehicle type, as well as vehicle specifications. 
-
-## More on the Convolutional Neural Network
-
  - using a pre-trained network? This may be more confusing as I try to create something which is able to accomplish the goal of the project. imagining my own approach to convolution and pooling would be entirely new to me, but if I had unlimited time I would undoubtedly do this. In this case, I think zero padding could be terrible for the quality of the model as sometimes the most important features of the map are on its edges. The only benefit the nature of this project has is that I already know the different maps and these do not change, so a lot of image data is hard-coded. right now, i'll create something working with efficientnetb7 if this is how I choose to approach it since i've used it before, possibly switching to NoisyNN as the noise appraoch probably is the future of CNNs and adversarial learning.  
  - map changes. maps have changed over time in wot. for the sake of simplicity right now, I think i'll want to choose replays over the past year to mitigate these map changes as much as possible and keep the most up-to-date playstyle. 
 
@@ -84,10 +86,7 @@ This is a project I am currently planning different approaches in which to imagi
  - i imagine data extraction will be much more challenging than initially thought. getting an amount of data that is sufficient for training of the cnn will be challenging.  
  - which replays to choose? this is not an easy question at all to answer and is probably the most important one of the entire project, and also the one with the least verifiable evidence per time. basically, i'll just have to choose what i think is best (highest damange matches, MOE matches, etc.). one immediate problem i see is that the most useful strategy is often not the best for MOE. so, I'll need to be careful because your model is only as good and as bad as your data. for now, this problem can probably be deferred until i've got an acceptable version of the model wokring, but later this will become the question. 
 
-# opportunity cost payment system
 
-## Overview
-Similar to venmo, with payment routing between friends without the need of a bank account, however, this is aimed to stop the need for budgeting. By uploading a bank transaction statement or connecting your venmo, it basically plays off of Venmo's "What is this for?" field as, before you send a friend money (maybe for pizza, a party, or anything else) it uses your previous transaction data to tell you where your opportunity cost lies and whether or not you should really pay someone as much as you say. The main problem this is aimed to solve is that many payments sent through venmo are inherently subjective and often a conversation goes something like: q:"how much do I owe you?" a: "dude it doesn't really matter, whatever you think is **fair**". A friend presented me with this problem and a version of this solution, and it is truly aimed to be a more informed venmo specifically targeted towards college students. The key to this would be how do you gain users on this when venmo and others already have such a strong hold on the friend/social payment area, and I think the way to approach building something like this would be to make it have a sort of social aspect as well that auto-manages your budget and keeping it very very simple and clean. 
 
 
 
